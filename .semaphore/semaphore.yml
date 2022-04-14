@@ -27,6 +27,24 @@ global_job_config:
       - cache restore android-build
 
 blocks:
+  - name: Test artifacts
+    task:
+      agent:
+        machine:
+          type: s1-local-test2
+      jobs:
+        - name: Job 1
+          commands: 
+            - echo "1232" > asdf.txt
+            - artifacts push job asdf.txt
+            - artifacts push workflow asdf.txt
+            - artifacts push project asdf.txt
+            - artifacts pull job asdf.txt -d job.txt
+            - cat job.txt
+            - artifacts get workflow asdf.txt -d workflow.txt
+            - cat workflow.txt
+            - artifacts get project asdf.txt -d project.txt            
+            - cat project.txt
   - name: 'Build'
     skip:
       when: "(branch != 'master' OR branch != 'dev') AND pull_request !~ '.*'"
