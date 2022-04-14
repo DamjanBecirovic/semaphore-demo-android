@@ -14,12 +14,12 @@ blocks:
         - name: Job 1
           commands: 
             - echo "1232" > asdf.txt
-            - artifacts push job asdf.txt
-            - artifacts push workflow asdf.txt
-            - artifacts push project asdf.txt
-            - artifacts pull job asdf.txt -d job.txt
+            - artifact push job asdf.txt
+            - artifact push workflow asdf.txt
+            - artifact push project asdf.txt
+            - artifact pull job asdf.txt -d job.txt
             - cat job.txt
-            - artifacts pull workflow asdf.txt -d workflow.txt
+            - artifact pull workflow asdf.txt -d workflow.txt
             - cat workflow.txt
-            - artifacts pull project asdf.txt -d project.txt            
+            - artifact pull project asdf.txt -d project.txt            
             - cat project.txt
