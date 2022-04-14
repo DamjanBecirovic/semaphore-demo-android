@@ -41,9 +41,9 @@ blocks:
             - artifacts push project asdf.txt
             - artifacts pull job asdf.txt -d job.txt
             - cat job.txt
-            - artifacts get workflow asdf.txt -d workflow.txt
+            - artifacts pull workflow asdf.txt -d workflow.txt
             - cat workflow.txt
-            - artifacts get project asdf.txt -d project.txt            
+            - artifacts pull project asdf.txt -d project.txt            
             - cat project.txt
   - name: 'Build'
     skip:
