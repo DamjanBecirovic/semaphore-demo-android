@@ -25,8 +25,6 @@ global_job_config:
       - cache restore android-build
 blocks:
   - name: Build
-    skip:
-      when: (branch != 'master' OR branch != 'dev') AND pull_request !~ '.*'
     task:
       jobs:
         - name: Build Project
